@@ -21,7 +21,7 @@ class Chats {
 
     // no atsūtītajiem datiem izveidojam masīvu ar zinju objektiem
     for (const rinda of dati.chats) {
-      const zinja = new Zinja(rinda.vards, rinda.zinja);
+      const zinja = new Zinja(rinda.vards, rinda.zinja, rinda.laiks);
       this.add(zinja);
     }
   }
@@ -52,9 +52,10 @@ Klase, kas satur visu vienas ziņas saturu, struktūru un metainformāciju
 Inicializē ar no servera atgrieztā json objekta vienu rindu
 */
 class Zinja {
-  constructor(vards, zinja) {
+  constructor(vards, zinja,laiks) {
     this.vards = vards;
     this.zinja = zinja;
+    this.laiks = laiks;
   }
 
   formateRindu() {
@@ -65,7 +66,7 @@ class Zinja {
     newLI.className = LIclassName;
     let newDiv = document.createElement("div"); 
     newDiv.className = newDivclassName;
-    let teksts = this.vards + ": " + this.zinja;
+    let teksts = this.vards + ": " + this.zinja + ";" + this.laiks;
     let newContent = document.createTextNode(teksts); 
     newLI.appendChild(newDiv); 
     newDiv.appendChild(newContent); 
@@ -106,7 +107,7 @@ async function suutiZinju() {
         // izdzēš ievades lauku
         zinjasElements.value = "";
         // izveido jaunu chata rindinju no vārda, ziņas utml datiem
-        const rinda = new Zinja(vards, zinja)
+        const rinda = new Zinja(vards, zinja, laiks)
 
         const atbilde = await fetch('/chats/suuti', {
             method: 'POST',
