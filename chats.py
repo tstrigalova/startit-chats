@@ -17,5 +17,5 @@ def lasi():
 
 def pieraksti_zinju(dati):
     with open(LOGFAILS, "a", newline="", encoding="utf-8") as f:
-        f.write(json.dumps(dati["chats"]) + "\n" + "laiks")
+        f.write(json.dumps(dati["chats"]) + "\n")
 
