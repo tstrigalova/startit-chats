@@ -1,7 +1,7 @@
 from flask import json, jsonify
 from datetime import datetime
-timestamp = 1545730073
-laiks = datetime.fromtimestamp(timestamp)
+
+laiks = datetime.now()
 
 LOGFAILS = "chats.txt"
 
