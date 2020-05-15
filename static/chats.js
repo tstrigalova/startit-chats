@@ -21,7 +21,7 @@ class Chats {
 
     // no atsūtītajiem datiem izveidojam masīvu ar zinju objektiem
     for (const rinda of dati.chats) {
-      const zinja = new Zinja(rinda.vards, rinda.zinja);
+      const zinja = new Zinja(rinda.vards, rinda.zinja, rinda.laiks);
       this.add(zinja);
     }
   }

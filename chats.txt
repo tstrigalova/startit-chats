@@ -1,1 +1,1 @@
-{"vards": "Serveris", "zinja": "Sākam jaunu, skaistu dzīvi!"}
+{"vards": "Serveris", "zinja": "Sākam jaunu, skaistu dzīvi!", "laiks": ""}
