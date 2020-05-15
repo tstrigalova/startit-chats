@@ -21,7 +21,7 @@ class Chats {
 
     // no atsūtītajiem datiem izveidojam masīvu ar zinju objektiem
     for (const rinda of dati.chats) {
-      const zinja = new Zinja(rinda.vards, rinda.zinja, rinda.laiks);
+      const zinja = new Zinja(rinda.vards, rinda.zinja);
       this.add(zinja);
     }
   }
@@ -52,7 +52,7 @@ Klase, kas satur visu vienas ziņas saturu, struktūru un metainformāciju
 Inicializē ar no servera atgrieztā json objekta vienu rindu
 */
 class Zinja {
-  constructor(vards, zinja,laiks) {
+  constructor(vards, zinja, laiks) {
     this.vards = vards;
     this.zinja = zinja;
     this.laiks = laiks;
